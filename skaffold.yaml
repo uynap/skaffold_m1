@@ -1,4 +1,4 @@
-apiVersion: skaffold/v2beta26
+apiVersion: skaffold/v2beta27
 kind: Config
 build:
   tagPolicy:
@@ -8,6 +8,21 @@ build:
     docker:
       dockerfile: "spanner.Dockerfile"
       cliFlags: ["--platform", "linux/arm64"]
+      noCache: true
   local:
+    push: false
     useDockerCLI: true
     useBuildkit: true
+deploy:
+  helm:
+    releases:
+    - name: spanner
+      chartPath: deployment/helm/spanner/local
+      valuesFiles:
+      - "deployment/helm/spanner/local/values.yaml"
+portForward:
+- resourceType: service
+  resourceName: spanner-service
+  namespace: default
+  port: 9010
+  localPort: 9011

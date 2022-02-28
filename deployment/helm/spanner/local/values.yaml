@@ -1,0 +1,6 @@
+targetNamespace: default
+
+spannerImageName: spanner-emulator
+spannerDB: projects/local-project/instances/local-instance/databases/local-database
+spannerData: default
+

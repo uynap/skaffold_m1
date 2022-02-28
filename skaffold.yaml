@@ -7,7 +7,7 @@ build:
   - image: spanner-emulator
     docker:
       dockerfile: "spanner.Dockerfile"
-      cliFlags: ["--platform", "linux/amd64"]
+      cliFlags: ["--platform", "linux/arm64"]
   local:
     useDockerCLI: true
     useBuildkit: true

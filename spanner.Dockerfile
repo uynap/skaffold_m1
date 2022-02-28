@@ -1,5 +1,5 @@
-ARG BUILDER_IMAGE=golang:1.17.2-buster
-ARG EMULATOR_IMAGE=gcr.io/cloud-spanner-emulator/emulator:1.3.0
+ARG BUILDER_IMAGE=golang:1.17.7-buster
+ARG EMULATOR_IMAGE=gcr.io/cloud-spanner-emulator/emulator:1.4.1
 
 FROM --platform=$TARGETPLATFORM ${BUILDER_IMAGE} AS builder
 

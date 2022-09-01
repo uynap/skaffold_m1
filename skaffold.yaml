@@ -1,4 +1,4 @@
-apiVersion: skaffold/v2beta27
+apiVersion: skaffold/v2beta28
 kind: Config
 build:
   tagPolicy:
@@ -7,7 +7,7 @@ build:
   - image: spanner-emulator
     docker:
       dockerfile: "spanner.Dockerfile"
-      cliFlags: ["--platform", "linux/arm64"]
+      #      cliFlags: ["--platform", "linux/arm64"]
       noCache: true
   local:
     push: false
